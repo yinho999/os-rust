@@ -1,0 +1,17 @@
+[package]
+name = "os-rust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+
+
+# Use abort on panic in dev and release mode, this will disable unwind (eh_personality)
+# the profile used for `cargo build`
+[profile.dev]
+panic = "abort"
+
+# the profile used for `cargo build --release`
+[profile.release]
+panic = "abort"
